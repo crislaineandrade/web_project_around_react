@@ -24,17 +24,14 @@ const cards = [
     createdAt: '2019-07-05T08:11:58.324Z',
   },
 ]
-console.log(cards)
 
+const newCardPopup = {title: 'Novo Local', children: <NewCard />}
+const editProfilePopup = {title: 'Editar Perfil', children: <EditProfile />}
+const editAvatarPopup = {title: 'Alterar a foto do perfil', children: <EditAvatar />}
 
 function Main() {
   const [popup, setPopup] = useState(null)
-  const newCardPopup = {title: 'Novo Local', children: <NewCard />}
-  const editProfilePopup = {title: 'Editar Perfil', children: <EditProfile />}
-  const editAvatarPopup = {title: 'Alterar a foto do perfil', children: <EditAvatar />}
   
-  
-
   function handleOpenPopup(popup) {
     setPopup(popup)
   }
