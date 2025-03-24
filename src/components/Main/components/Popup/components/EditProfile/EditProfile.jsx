@@ -1,6 +1,6 @@
 function EditProfile() {
     return(
-        <form className="popup__form" name="formProfile" noValidate>
+        <form className="popup__form" name="formProfile">
             <fieldset className="popup__fieldset">
               <input
                 type="text"
