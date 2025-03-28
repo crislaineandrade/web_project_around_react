@@ -1,35 +1,58 @@
-import {useState} from 'react'
+import {useState, useEffect, useContext} from 'react'
 import Popup from './components/Popup/Popup';
 import NewCard from '../Main/components/Popup/components/NewCard/NewCard'  
 import EditProfile from '../Main/components/Popup/components/EditProfile/EditProfile'
 import EditAvatar from '../Main/components/Popup/components/EditAvatar/EditAvatar'
 import Card from '../Main/components/Popup/components/Card/Card'
+import api from '../../utils/api'
+import { CurrentUserContext } from '../../contexts/CurrentUserContext';
 
-
-const cards = [
-  {
-    isLiked: false,
-    _id: '5d1f0611d321eb4bdcd707dd',
-    name: 'Yosemite Valley',
-    link: 'https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_yosemite.jpg',
-    owner: '5d1f0611d321eb4bdcd707dd',
-    createdAt: '2019-07-05T08:10:57.741Z',
-  },
-  {
-    isLiked: false,
-    _id: '5d1f064ed321eb4bdcd707de',
-    name: 'Lake Louise',
-    link: 'https://practicum-content.s3.us-west-1.amazonaws.com/web-code/moved_lake-louise.jpg',
-    owner: '5d1f0611d321eb4bdcd707dd',
-    createdAt: '2019-07-05T08:11:58.324Z',
-  },
-]
 
 const newCardPopup = {title: 'Novo Local', children: <NewCard />}
 const editProfilePopup = {title: 'Editar Perfil', children: <EditProfile />}
 const editAvatarPopup = {title: 'Alterar a foto do perfil', children: <EditAvatar />}
 
 function Main() {
+  const {userContext} = useContext(CurrentUserContext)
+  console.log(userContext)
+ 
+  
+  const [cards, setCards] = useState([])
+
+  useEffect(() => {
+    function getCards() {
+      api.getCards().then((card) => {
+
+        console.log(card)
+        setCards(card)
+      })
+    }
+    getCards()
+
+  }, [])
+
+
+  async function handleCardLike(card) {
+    const isLiked = card.isLiked
+    console.log(card)
+
+
+    await api.handleLikeAction(card._id, isLiked).then((newCard) => {
+      setCards((state) => state.map((currentCard) => currentCard._id === card._id ? newCard : currentCard))
+    }).catch((error) => console.error(error))
+  }
+
+
+  async function handleCardDelete(card) {
+
+    await api.deleteCard(card._id).then((cardDeleted) => {
+      console.log(cardDeleted)
+      setCards((novo) => novo.filter((deleteCard) => deleteCard._id !== card._id))
+    }).catch((error) => console.log(error))
+  }
+
+
+
   const [popup, setPopup] = useState(null)
   
   function handleOpenPopup(popup) {
@@ -39,13 +62,16 @@ function Main() {
   function handleClosePopup() {
     setPopup(null)
   }
+
+
+  
   return (
     <main className="content">
       <section className="profile page-section">
         <div className="profile__avatar-container">
           <img
             className="profile__avatar"
-            src="images/avatar.jpg"
+            src={userContext.avatar}
             alt="image of a man"
           />
           <img
@@ -57,7 +83,7 @@ function Main() {
         </div>
 
         <div className="profile__info">
-          <h1 className="profile__user">Jacques Cousteau</h1>
+          <h1 className="profile__user">{userContext.name}</h1>
 
           <button type="button" className="profile__edit-button" onClick={() => handleOpenPopup(editProfilePopup)}>
             <img
@@ -67,7 +93,7 @@ function Main() {
             />
           </button>
 
-          <p className="profile__paragraph">Explorador</p>
+          <p className="profile__paragraph">{userContext.about}</p>
         </div>
 
         <button type="button" className="profile__add-button" onClick={() => handleOpenPopup(newCardPopup)
@@ -86,7 +112,7 @@ function Main() {
         <ul className="elements__cards" id="elementsCards">
           
           {cards.map((card) => (
-            <Card key={card._id} card={card} handleOpenPopup={handleOpenPopup}  />
+            <Card key={card._id} card={card} handleOpenPopup={handleOpenPopup} onCardLike={handleCardLike} onCardDelete={handleCardDelete}/>
           ))}
 
         </ul>
