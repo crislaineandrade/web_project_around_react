@@ -6,6 +6,10 @@ import EditAvatar from '../Main/components/Popup/components/EditAvatar/EditAvata
 import Card from '../Main/components/Popup/components/Card/Card'
 import api from '../../utils/api'
 import { CurrentUserContext } from '../../contexts/CurrentUserContext';
+import editIcon from '../../images/editPen.png'
+import editButton from '../../images/edit_button.png'
+
+import addButton from '../../images/add__button.png'
 
 
 const newCardPopup = {title: 'Novo Local', children: <NewCard />}
@@ -28,7 +32,7 @@ function Main({onOpenPopup, onClosePopup, popup, cards, onCardLike, onCardDelete
           />
           <img
             className="profile__edit-icon"
-            src="images/editPen.png"
+            src={editIcon}
             alt="icon of a pen"
             onClick={() => onOpenPopup(editAvatarPopup)}
           />
@@ -40,7 +44,7 @@ function Main({onOpenPopup, onClosePopup, popup, cards, onCardLike, onCardDelete
           <button type="button" className="profile__edit-button" onClick={() => onOpenPopup(editProfilePopup)}>
             <img
               className="profile__image-edit-button"
-              src="images/edit_button.png"
+              src={editButton}
               alt="edit button"
             />
           </button>
@@ -52,7 +56,7 @@ function Main({onOpenPopup, onClosePopup, popup, cards, onCardLike, onCardDelete
         }>
           <img
             className="profile__image-add-button"
-            src="images/add__button.png"
+            src={addButton}
             alt="add button"
             
           />

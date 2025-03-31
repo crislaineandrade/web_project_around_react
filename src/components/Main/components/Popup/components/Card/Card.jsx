@@ -1,5 +1,6 @@
 
 import ImagePopup from '../ImagePopup/ImagePopup';
+import deleteIcon from '../../../../../../images/Trash.png'
 
 function Card(props) {
     const {card, handleOpenPopup, onCardLike, onCardDelete} = props
@@ -25,7 +26,7 @@ function Card(props) {
 
       <img
         className="elements__delete-button"
-        src="images/Trash.png"
+        src={deleteIcon}
         alt="image of the delete button"
         onClick={handleCardDelete}
       />
