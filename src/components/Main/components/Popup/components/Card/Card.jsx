@@ -8,7 +8,6 @@ function Card(props) {
       title: '',
       children: <ImagePopup card={card}  />
     }
-    console.log(props)
 
     function handleLikeClick() {
       onCardLike(card)

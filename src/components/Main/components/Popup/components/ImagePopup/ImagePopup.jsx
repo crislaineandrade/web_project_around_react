@@ -1,6 +1,5 @@
 function ImagePopup(props) {
   const { card } = props;
-  console.log(card);
   return (
     <div className="popup-image__container">
         <img

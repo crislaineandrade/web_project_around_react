@@ -4,27 +4,26 @@ import { CurrentUserContext } from "../../../../../../contexts/CurrentUserContex
 function EditProfile() {
   const userContext = useContext(CurrentUserContext)
   const {currentUser, handleUpdateUser} = userContext
-  const [name, setName] = useState('')
-  const [description, setDescription] = useState('')
+  const [name, setName] = useState(currentUser.name)
+  const [description, setDescription] = useState(currentUser.about)
 
   function handleChangeName(e) {
-    console.log(e)
     setName(e.target.value)
   }
 
   function handleChangeDescription(e) {
-    console.log(e)
     setDescription(e.target.value)
   }
 
-  function handleSubmit(e) {
+  // const handleUpdateUserstate = (updatedUser) => {
+  //   setCurrent
+
+  // }
+
+  const handleSubmit = (e) => {
     e.preventDefault()
-
     handleUpdateUser({name, about: description})
-
-
   }
-
 
     return(
         <form className="popup__form" name="formProfile"
@@ -58,7 +57,7 @@ function EditProfile() {
               />
               <span className="ocupation-error popup__input_type_error"></span>
 
-              <button type="submit" className="popup__save-button form__submit">
+              <button type="submit" className="popup__save-button form__submit" on>
                 Salvar
               </button>
             </fieldset>
