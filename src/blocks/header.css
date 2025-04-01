@@ -3,14 +3,12 @@
 .header {
   max-width: 880px;
   margin: auto;
-
 }
 
 .header__logo {
   padding: 45px 0 41px;
-  color: #FFFFFF;
+  color: #ffffff;
   max-width: 173px;
-
 }
 
 .header__line {
@@ -19,27 +17,21 @@
   max-width: 880px;
 }
 
-
-
 /* TELA 320PX */
 
-@media screen and (max-width:320px){
+@media screen and (max-width: 320px) {
   .header {
     max-width: 320px;
-
   }
 
   .header__logo {
     padding: 28px 0 32px;
-    color: #FFFFFF;
+    color: #ffffff;
     max-width: 126px;
-
   }
 
   .header__line {
     margin: 0 0 42px;
     max-width: 320px;
   }
-
-
 }

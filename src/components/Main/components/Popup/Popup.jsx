@@ -1,5 +1,3 @@
-
-
 export default function Popup(props) {
   const { onClose, title, children } = props;
 
@@ -21,7 +19,6 @@ export default function Popup(props) {
 
           {children}
         </div>
-        
       </section>
     </>
   );

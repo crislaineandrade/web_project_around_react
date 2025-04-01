@@ -5,13 +5,11 @@
   inset: 0;
   width: 100%;
   height: 100%;
-
 }
 
 .popup_opened {
   display: block;
   color: #fff;
-
 }
 
 .popup-container {
@@ -27,7 +25,7 @@
 }
 
 .popup-edit-profile__close-button {
-  background-image: url('../images/close_Icon.png');
+  background-image: url("../images/close_Icon.png");
   background-repeat: no-repeat;
   width: 40px;
   height: 40px;
@@ -37,7 +35,6 @@
   right: -53px;
   cursor: pointer;
   border: none;
-
 }
 
 .popup-edit-profile__close-button:hover {
@@ -48,20 +45,18 @@
   max-width: 330px;
   margin: 34px 64px 54px 36px;
   color: #000000;
-  font-family: 'Inter';
+  font-family: "Inter";
   font-size: 1.5rem;
   line-height: 1.815625rem;
   font-weight: 900;
-
 }
 
 .popup-edit-profile__form {
   margin: 0 36px 36.51px;
-
 }
 
 .popup-edit-profile__link {
-  font-family: 'Inter';
+  font-family: "Inter";
   font-size: 0.875rem;
   line-height: 1.05875rem;
   font-weight: 400;
@@ -70,7 +65,6 @@
   height: 27.34px;
   border: none;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-
 }
 
 .popup-edit-profile__save-button {
@@ -80,20 +74,16 @@
   color: #fff;
   border: 1px solid #000000;
   cursor: pointer;
-  font-family: 'Inter';
+  font-family: "Inter";
   margin-top: 48px;
-
 }
-
 
 .popup-edit-profile__save-button:hover {
   opacity: 0.8;
 }
 
 @media screen and (max-width: 540px) {
-
   .popup-edit-profile__close-button {
-
   }
 
   .popup-container {
@@ -101,16 +91,14 @@
   }
 
   .popup-edit-profile__close-button {
-
   }
 
   .popup-edit-profile__title {
-    max-width:250px
+    max-width: 250px;
   }
 
   .popup-edit-profile__link {
-    max-width:250px
-
+    max-width: 250px;
   }
 
   .popup-edit-profile__close-button {
@@ -118,7 +106,5 @@
     right: -10px;
     width: 30px;
     height: 30px;
-
   }
-
 }

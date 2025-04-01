@@ -5,7 +5,6 @@
   inset: 0;
   width: 100%;
   height: 100%;
-
 }
 
 .popup_opened {
@@ -13,12 +12,10 @@
   color: #fff;
   max-width: 2560px;
   height: 1100px;
-
-
 }
 
 .popup-delete__close-button {
-  background-image: url('../images/close_Icon.png');
+  background-image: url("../images/close_Icon.png");
   position: absolute;
   top: -19%;
   right: -43px;
@@ -28,9 +25,6 @@
   cursor: pointer;
   width: 40px;
   height: 40px;
-
-
-
 }
 
 .popup-delete__close-button:hover {
@@ -53,11 +47,10 @@
   max-width: 330px;
   margin: 34px 36px 0 36px;
   color: #000000;
-  font-family: 'Inter';
+  font-family: "Inter";
   font-size: 24px;
   line-height: 29.05px;
   font-weight: 900;
-
 }
 
 .popup-delete__confirm-button {
@@ -67,42 +60,35 @@
   color: #fff;
   border: 1px solid #000000;
   cursor: pointer;
-  font-family: 'Inter';
+  font-family: "Inter";
   margin: 38px 36px 36px;
   padding: 0;
-
 }
 
 .popup-delete__confirm-button:hover {
   opacity: 0.8;
-
 }
 
 @media screen and (max-width: 500px) {
-
   .popup-delete__container {
     max-width: 350px;
   }
   .popup-delete__close-button {
     top: -26%;
     right: 3;
-
   }
 
-  .popup-delete__paragraph{
+  .popup-delete__paragraph {
     max-width: 238px;
     margin: 25px 22px 0;
     font-size: 1.125rem;
-    line-height:1.361255rem;
-
+    line-height: 1.361255rem;
   }
 
-  .popup-delete__confirm-button  {
+  .popup-delete__confirm-button {
     max-width: 238px;
     height: 41px;
     border-radius: 2px;
     margin: 25px 22px 26px 22px;
   }
-
-
 }

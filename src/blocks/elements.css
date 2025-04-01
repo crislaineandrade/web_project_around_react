@@ -10,7 +10,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, 282px);
   grid-gap: 20px 17px;
-  margin: 0 ;
+  margin: 0;
   list-style-type: none;
   padding: 0;
   justify-content: center;
@@ -22,30 +22,24 @@
   width: 282px;
   height: 361px;
   position: relative;
-
 }
-
-
 
 .elements__delete-button {
   width: 18px;
   height: 19.3px;
   position: absolute;
   top: 10px;
-  right:10px;
+  right: 10px;
   cursor: pointer;
-
 }
 
 .elements__delete-button_inactive {
   display: none;
-
 }
 
 .elements__delete-button:hover {
   opacity: 0.6;
 }
-
 
 .elements__image {
   width: 282px;
@@ -53,10 +47,10 @@
   object-fit: cover;
   border-radius: 10px 10px 0 0;
   cursor: pointer;
-
 }
 
- .elements__card-content {  /*div */
+.elements__card-content {
+  /*div */
   background-color: #fff;
   display: flex;
   justify-content: space-between;
@@ -70,14 +64,14 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  font-family: 'Inter';
+  font-family: "Inter";
   font-weight: 900;
   font-size: 1.5rem;
   line-height: 1.815625rem;
 }
 
 .elements__button-image-like {
-  background-image: url('../images/button_heart.png');
+  background-image: url("../images/button_heart.png");
   border: none;
   background-color: #fff;
   padding: 0;
@@ -87,23 +81,19 @@
   background-repeat: no-repeat;
   background-size: contain;
   cursor: pointer;
-
-
 }
 
 .elements__button-image-like_isActive {
-  background-image: url('../images/heartButtonBlack.png');
+  background-image: url("../images/heartButtonBlack.png");
 }
 
 .elements__button-image-like:hover {
   opacity: 0.6;
-
 }
-
 
 /* TELA 800 PX */
 
-@media screen and (max-width:800px) {
+@media screen and (max-width: 800px) {
   .elements {
     max-width: 600px;
     margin-bottom: 57px;
@@ -113,25 +103,22 @@
     grid-template-columns: repeat(auto-fit, 282px);
     grid-template-rows: repeat(3, auto);
     grid-gap: 15px 14px;
-
   }
 
-  .elements__card-content {  /*div */
+  .elements__card-content {
+    /*div */
     padding: 23px 19px 28px;
-
   }
 
   .elements__name-card {
     font-size: 1.4375rem;
     line-height: 1.628125rem;
   }
-
-
 }
 
 /* TELA 320 PX */
 
-@media screen and (max-width:320px) {
+@media screen and (max-width: 320px) {
   .elements {
     max-width: 300px;
     margin-bottom: 37px;
@@ -141,10 +128,5 @@
     grid-template-columns: repeat(1, 282px);
     grid-template-rows: repeat(6, auto);
     grid-gap: 13px 12px;
-
   }
-
 }
-
-
-
