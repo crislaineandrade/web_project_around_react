@@ -23,20 +23,22 @@
   max-height: 75vh;
   height: auto;
   width: auto;
-  display: flex;
+  position: relative;
 
 }
 
-.popup__container {
+.popup__container_image {
   display: flex;
   max-width: 75vw;
-  max-height: fit-content;
+  max-height: 75vh;
   justify-content: center;
   border: none;
   position: relative;
   height: auto;
+}
 
-  
+.popup__container {
+  border: none;
 }
 
 .popup-image__subtitle {
@@ -46,7 +48,9 @@
   line-height: 14.52px;
   color: #fff;
   position: absolute;
-  top: 95%;
+  top: 102%;
+  left: 0;
+  margin: 0;
   
 }
 
@@ -67,7 +71,7 @@
   width: 45px;
   height: 40px;
   top: -45px; 
-  right: -47px; 
+  right: -35px; 
 }
 
 .popup__close-button:hover {
